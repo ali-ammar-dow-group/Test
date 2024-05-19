@@ -8,7 +8,7 @@ class SaleOrderInherit(models.Model):
     def create(self, vals):
         quotation = super(SaleOrderInherit, self).create(vals)
         if quotation.partner_id:
-            sales_man = quotation.partner_id.user_id
+            sales_man = quotation.user_id
             if sales_man:
                 if user.login:
                     try:
